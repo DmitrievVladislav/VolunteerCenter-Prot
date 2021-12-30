@@ -1,2 +1,2 @@
-# VolunteerCenter-Prot
+# VolunteerCenter
 Веб приложение для помощи маломобильным людям
