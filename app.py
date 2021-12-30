@@ -22,13 +22,13 @@ def load_user(user_id):
 
 
 @app.route('/')
-def index():
+def load_index_page():
     db.create_all()
     return render_template('index.html')
 
 
 @app.route('/login', methods=['GET', 'POST'])
-def login():
+def load_login_page():
     form = LoginForm()
     if form.validate_on_submit():
         user = models.User.query.filter_by(username=form.username.data).first()
@@ -37,13 +37,13 @@ def login():
                 login_user(user, remember=form.remember.data)
                 if current_user.user_lvl == 3:
                     return redirect(url_for('load_entrance_page'))
-                return redirect(url_for('home'))
-        return redirect(url_for('login'))
+                return redirect(url_for('load_home_page'))
+        return redirect(url_for('load_login_page'))
     return render_template('login.html', form=form)
 
 
 @app.route('/signup', methods=['GET', 'POST'])
-def signup():
+def load_signup_page():
     form = RegisterForm()
     if form.validate_on_submit():
         hashed_password = generate_password_hash(form.password.data, method='sha256')
@@ -52,13 +52,13 @@ def signup():
                                phone=form.phone.data)
         db.session.add(new_user)
         db.session.commit()
-        return redirect(url_for('index'))
+        return redirect(url_for('load_index_page'))
     return render_template('signup.html', form=form)
 
 
 @app.route('/home')
 @login_required
-def home():
+def load_home_page():
     active_users = []
     if current_user.user_lvl == 3:
         for i in users_in_process:
@@ -90,7 +90,7 @@ def home():
 
 @app.route('/profile')
 @login_required
-def profile():
+def load_profile_page():
     return render_template('profile.html', username=current_user.username, name=current_user.name,
                            surname=current_user.surname, midname=current_user.midname, user_lvl=current_user.user_lvl)
 
@@ -105,7 +105,8 @@ def load_take_page(index):
         if i.id == current_user.id:
             i.connected_id = int(index)
             i.in_process = True
-    return redirect(url_for('home'))
+    return redirect(url_for('load_home_page'))
+
 
 @app.route('/home/cancel', methods=['GET', 'POST'])
 @login_required
@@ -120,11 +121,12 @@ def load_cancel_page():
                 if j.id == temp:
                     j.connected_id = 0
                     j.in_process = False
-    return redirect(url_for('home'))
+    return redirect(url_for('load_home_page'))
+
 
 @app.route('/admin/del<index>/', methods=['POST'])
 @login_required
-def admin_del(index):
+def load_delete_page(index):
     user = db.session.query(models.User).get(index)
     db.session.delete(user)
     db.session.commit()
@@ -134,7 +136,7 @@ def admin_del(index):
 
 @app.route('/admin')
 @login_required
-def admin():
+def load_admin_page():
     if current_user.user_lvl == 0:
         users = models.User.query.all()
         return render_template('admin.html', name=current_user.username, users=users)
@@ -178,7 +180,7 @@ def set_gate(index):
     for i in users_in_process:
         if i.id == current_user.id:
             i.gate = index
-    return redirect(url_for('home'))
+    return redirect(url_for('load_home_page'))
 
 
 @app.route('/saving<index>', methods=['GET', 'POST'])
@@ -196,13 +198,13 @@ def save_changes(index):
         user.user_lvl = form.lvl.data
         db.session.add(user)
         db.session.commit()
-        return redirect(url_for('admin'))
+        return redirect(url_for('load_admin_page'))
     return render_template('edit.html', form=form)
 
 
 @app.route('/add', methods=['GET', 'POST'])
 @login_required
-def add():
+def load_add_page():
     form = AddForm()
     if form.validate_on_submit():
         hashed_password = generate_password_hash(form.password.data, method='sha256')
@@ -211,7 +213,7 @@ def add():
                                email=form.email.data)
         db.session.add(new_user)
         db.session.commit()
-        return redirect(url_for('admin'))
+        return redirect(url_for('load_admin_page'))
     return render_template('add.html', form=form)
 
 
@@ -232,14 +234,14 @@ def change_status():
             counter += 1
             if counter == users_in_process.__len__():
                 add_user(True)
-    return redirect(url_for('home'))
+    return redirect(url_for('load_home_page'))
 
 
 @app.route('/logout')
 @login_required
 def logout():
     logout_user()
-    return redirect(url_for('index'))
+    return redirect(url_for('load_index_page'))
 
 
 def add_user(is_ready):

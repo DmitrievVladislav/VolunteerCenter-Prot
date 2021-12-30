@@ -25,7 +25,7 @@ AdminPanel
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="{{ url_for('home') }}">Главная</a></li>
+                <li><a href="{{ url_for('load_home_page') }}">Главная</a></li>
                 <li><a href="{{ url_for('logout') }}">Выйти</a></li>
             </ul>
         </div>
@@ -54,7 +54,7 @@ AdminPanel
                     </tr>
                     {% endfor %}
                 </table>
-                <a href="{{ url_for('add') }}">Добавить нового пользователя</a>
+                <a href="{{ url_for('load_add_page') }}">Добавить нового пользователя</a>
             </div>
         </div>
     </div>

@@ -28,12 +28,12 @@ Home
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
                 {% if current_user.user_lvl == 0 %}
-                <li><a href="{{ url_for('admin') }}">Панель администратора</a></li>
+                <li><a href="{{ url_for('load_admin_page') }}">Панель администратора</a></li>
                 {% endif %}
                 {% if current_user.user_lvl == 3 %}
                 <li><a href="{{ url_for('load_entrance_page') }}">Изменить вход</a></li>
                 {% endif %}
-                <li><a href="{{ url_for('profile') }}">Профиль</a></li>
+                <li><a href="{{ url_for('load_profile_page') }}">Профиль</a></li>
                 <li><a href="{{ url_for('logout') }}">Выйти</a></li>
             </ul>
         </div>
@@ -98,7 +98,7 @@ Home
                             </tr>
                             {% endfor %}
                         </table>
-                        <a href="/change">Обновить</a>
+                        <a href="load_home_page">Обновить</a>
                         <a href="/change">Сменить статус</a>
                     </div>
                 </div>
