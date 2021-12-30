@@ -1,0 +1,41 @@
+body {
+  padding-top: 50px;
+}
+
+.title{
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+.main-table h2{
+  text-align: center;
+}
+
+.main-table{
+  display: block;
+  text-align: center;
+}
+
+.table-col{
+  margin: 30px auto 0;
+  font-size: 15px;
+}
+
+.table-col td{
+  padding: 25px;
+  border: 1px black solid;
+}
+
+.table-col td:hover{
+  border: 2px #212d4c solid;
+}
+
+.table-col span{
+  font-weight: bold;
+}

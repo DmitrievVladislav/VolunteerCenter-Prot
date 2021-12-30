@@ -1,0 +1,51 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}
+Profile
+{% endblock %}
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{url_for('.static', filename='profile.css')}}">
+<link rel="stylesheet" href="{{url_for('.static', filename='fonts.css')}}"/>
+{% endblock %}
+
+{% block content %}
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">{{ username }}</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="{{ url_for('home') }}">Главная</a></li>
+                <li><a href="{{ url_for('logout') }}">Выйти</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <div class="title">
+        <h1>Выберите вход!</h1>
+        <h4>Пожалуйста, выберите вход около которого вы находитесь!<br>Это важно!</h4>
+    </div>
+    <div class="main-table">
+<div class="container">
+    <form action="/home/entrance1" method="POST"><input type="submit" value="Вход №1"></form>
+    <form action="/home/entrance2" method="POST"><input type="submit" value="Вход №2"></form>
+    <form action="/home/entrance3" method="POST"><input type="submit" value="Вход №3"></form>
+    <form action="/home/entrance4" method="POST"><input type="submit" value="Вход №4"></form>
+    <form action="/home/entrance5" method="POST"><input type="submit" value="Вход №5"></form>
+    <form action="/home/entrance6" method="POST"><input type="submit" value="Вход №6"></form>
+    <form action="/home/entrance7" method="POST"><input type="submit" value="Вход №7"></form>
+    {% endblock %}
+</div>
+</div>

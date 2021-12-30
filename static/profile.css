@@ -1,0 +1,204 @@
+/*
+ * Base structure
+ */
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 70px;
+
+}
+
+
+/*
+ * Global add-ons
+ */
+
+.sub-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+/*
+ * Top navigation
+ * Hide default border to remove 1px line.
+ */
+.navbar-fixed-top {
+  border: 0;
+}
+
+/*
+ * Sidebar
+ */
+
+/* Hide for mobile, show later */
+.sidebar {
+  display: none;
+}
+@media (min-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 51px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    background-color: #f5f5f5;
+    border-right: 1px solid #eee;
+  }
+}
+
+/* Sidebar navigation */
+.nav-sidebar {
+  margin-right: -21px; /* 20px padding + 1px border */
+  margin-bottom: 20px;
+  margin-left: -20px;
+}
+.nav-sidebar > li > a {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+  color: #fff;
+  background-color: #428bca;
+}
+
+
+/*
+ * Main content
+ */
+
+.main {
+  padding: 20px;
+}
+@media (min-width: 768px) {
+  .main {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+.main .page-header {
+  margin-top: 0;
+}
+
+
+/*
+ * Placeholder dashboard ideas
+ */
+
+.placeholders {
+  margin-bottom: 30px;
+  text-align: center;
+}
+.placeholders h4 {
+  margin-bottom: 0;
+}
+.placeholder {
+  margin-bottom: 20px;
+}
+.placeholder img {
+  display: inline-block;
+  border-radius: 50%;
+}
+
+.page-header{
+  text-align: center;
+  font-family: 'Proxima Nova Bold', serif;
+}
+
+.timetable{
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  font-family: 'Proxima Nova Regular', serif;
+}
+
+.table-col{
+  margin: 20px auto 40px ;
+}
+
+.table-col a{
+  color: black;
+  text-decoration: none;
+}
+
+.table-col th:after {
+  background-color: #175fa8;
+  display: block;
+  content: "";
+  height: 2px;
+  width: 0;
+  -webkit-transition: width .5s ease-in-out;
+  -moz--transition: width .5s ease-in-out;
+  transition: width .5s ease-in-out;
+}
+
+.table-col th:hover:after,a:focus:after {
+  width: 100%;
+}
+
+.table-col td, .table-col th{
+  padding: 10px 50px;
+}
+
+.table-col td:hover, .table-col th:hover{
+  font-weight: bold;
+}
+
+.table-col th{
+  text-align: center;
+  font-size: 30px;
+}
+
+.table-col tr{
+  border-bottom: 1px black solid;
+  font-size: 15px;
+
+}
+.table-col tr:hover{
+  border-bottom: 2px black solid;
+}
+
+.profile{
+  font-family: 'Proxima Nova Regular', serif;
+  font-size: 15px;
+}
+
+.profile h2{
+  text-align: center;
+}
+
+.profile table{
+  margin: 0 auto;
+}
+
+.profile td{
+  padding: 10px 65px;
+  border-bottom: 1px black solid;
+}
+
+.profile td:nth-child(2n - 1){
+  font-weight: bold;
+}
+
+.profile td:hover{
+  font-weight: bold;
+}
+
+.profile tr:hover{
+  border-bottom: 2px black solid;
+}
+
+.profile p{
+  text-align: center;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.profile p:hover{
+  font-weight: bold;
+}

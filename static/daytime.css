@@ -1,0 +1,127 @@
+.main-table h2{
+  text-align: center;
+}
+
+.main-table{
+  display: block;
+  text-align: center;
+    margin-top: 100px;
+}
+
+.table-col{
+  margin: 30px auto 0;
+  font-size: 15px;
+}
+
+.table-col td{
+  padding-left:20px;
+  border: 1px black solid;
+}
+
+.table-col span{
+  font-weight: bold;
+}
+
+.td-part{
+    display: flex;
+}
+
+.timestatus{
+    padding: 2px 15px 0 0;
+}
+
+.timestatus p{
+    margin: 0;
+}
+
+.btns{
+    display: flex;
+    flex-direction: column;
+}
+
+.btns button{
+    padding: 5px;
+}
+
+.btns button:nth-child(2n-1){
+    background-color: #4ebd52;
+    border: 1px #4CAF50 solid;
+    color: white;
+    margin: 2px 1px 1px 0;
+}
+
+.btns button:nth-child(2n-1):hover{
+   background-color: #4da551;
+}
+
+.btns button:nth-child(2n){
+    background-color: #d94040;
+    border: 1px #ce2c2c solid;
+    color: white;
+    margin: 1px 1px 2px 0;
+}
+
+.btns button:nth-child(2n):hover{
+   background-color: #ba2929;
+}
+
+.all_admin h1{
+    text-align: center;
+    margin-top: 70px;
+
+}
+
+.admin{
+    display: flex;
+    justify-content: space-around;
+}
+.admin table{
+    border: 2px white solid ;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
+
+.admin td, .admin th{
+    border: 1px black solid;
+    padding: 10px 50px;
+}
+
+.admin a{
+    text-decoration: none;
+    border: 1px black solid;
+    padding: 10px;
+    border-radius: 10px;
+    transition: .9s;
+    background-color: #009999;
+    color: white;
+}
+
+.admin a:hover{
+    background-color: #FF9640;
+}
+
+
+.admin tr:hover{
+    border-bottom: 2px #009999 solid;
+}
+
+.admin tr:nth-last-child(1):hover{
+    border-bottom: none;
+    border-top: 2px #009999 solid;
+}
+
+.client{
+    margin-left: 5%;
+}
+
+.client h2{
+    text-align: center;
+}
+
+.coach{
+    margin-right: 7%;
+}
+
+.coach h2{
+    text-align: center;
+}

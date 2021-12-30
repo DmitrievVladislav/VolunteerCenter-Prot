@@ -1,0 +1,61 @@
+.all_admin h1{
+    text-align: center;
+    margin-top: 70px;
+
+}
+
+.admin{
+    display: flex;
+    justify-content: space-around;
+}
+.admin table{
+    border: 2px white solid ;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
+
+.admin td, .admin th{
+    border: 1px black solid;
+    padding: 1px 30px;
+}
+
+.admin a{
+    text-decoration: none;
+    border: 1px black solid;
+    padding: 10px;
+    border-radius: 10px;
+    transition: .9s;
+    background-color: #009999;
+    color: white;
+}
+
+.admin a:hover{
+    background-color: #FF9640;
+}
+
+
+.admin tr:hover{
+    border-bottom: 2px #009999 solid;
+}
+
+.admin tr:nth-last-child(1):hover{
+    border-bottom: none;
+    border-top: 2px #009999 solid;
+}
+
+.client{
+    margin-left: 5%;
+}
+
+.client h2{
+    text-align: center;
+}
+
+.coach{
+    margin-right: 7%;
+}
+
+.coach h2{
+    text-align: center;
+}
+
